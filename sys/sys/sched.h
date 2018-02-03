@@ -86,6 +86,7 @@ void	sched_fork(struct thread *td, struct thread *childtd);
 void	sched_fork_exit(struct thread *td);
 void	sched_class(struct thread *td, int class);
 void	sched_nice(struct proc *p, int nice);
+void	sched_gotop(struct proc *p);
 
 /*
  * Threads are switched in and out, block on resources, have temporary

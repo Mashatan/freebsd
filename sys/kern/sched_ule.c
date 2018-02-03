@@ -2039,6 +2039,23 @@ sched_nice(struct proc *p, int nice)
 	}
 }
 
+// set process and threads of the process to high priority (real-time)
+void
+sched_gotop(struct proc *p)
+{
+	struct thread *td;
+
+	PROC_LOCK_ASSERT(p, MA_OWNED);
+
+	p->p_nice = PRI_REALTIME;
+	FOREACH_THREAD_IN_PROC(p, td) {
+		thread_lock(td);
+		sched_prio(td, PRI_MIN_REALTIME);
+		sched_class(td, PRI_REALTIME);
+		thread_unlock(td);
+	}
+}
+
 /*
  * Record the sleep time for the interactivity scorer.
  */

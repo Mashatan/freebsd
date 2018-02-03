@@ -272,6 +272,18 @@ donice(struct thread *td, struct proc *p, int n)
 	return (0);
 }
 
+static int
+dogotop(struct thread *td, struct proc *p)
+{
+	int error;
+
+	PROC_LOCK_ASSERT(p, MA_OWNED);
+	if ((error = p_cansched(td, p)))
+		return (error);
+	sched_gotop(p);
+	return (0);
+}
+
 static int unprivileged_idprio;
 SYSCTL_INT(_security_bsd, OID_AUTO, unprivileged_idprio, CTLFLAG_RW,
     &unprivileged_idprio, 0, "Allow non-root users to set an idle priority");
