@@ -1840,7 +1840,7 @@ int	sys_dup2(struct thread *, struct dup2_args *);
 int	sys_fcntl(struct thread *, struct fcntl_args *);
 int	sys_select(struct thread *, struct select_args *);
 int	sys_fsync(struct thread *, struct fsync_args *);
-int	sys_setpriority(struct thread *, struct nosys_args *);
+int	sys_setpriority(struct thread *, struct setpriority_args *);
 int	sys_gotop(struct thread *, struct nosys_args *);
 int	sys_socket(struct thread *, struct socket_args *);
 int	sys_connect(struct thread *, struct connect_args *);
