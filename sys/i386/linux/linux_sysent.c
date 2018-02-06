@@ -401,4 +401,5 @@ struct sysent linux_sysent[] = {
 	{ AS(linux_pkey_alloc_args), (sy_call_t *)linux_pkey_alloc, AUE_NULL, NULL, 0, 0, 0, SY_THR_STATIC },	/* 381 = linux_pkey_alloc */
 	{ AS(linux_pkey_free_args), (sy_call_t *)linux_pkey_free, AUE_NULL, NULL, 0, 0, 0, SY_THR_STATIC },	/* 382 = linux_pkey_free */
 	{ 0, (sy_call_t *)nosys, AUE_NULL, NULL, 0, 0, 0, SY_THR_ABSENT },			/* 383 = nosys */
+	{ AS(nosys_args), (sy_call_t *)sys_gotop, AUE_GOTOP, NULL, 0, 0, 0, SY_THR_STATIC },	/* 333 = gotop */
 };

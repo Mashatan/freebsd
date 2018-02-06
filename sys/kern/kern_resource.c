@@ -167,6 +167,17 @@ sys_getpriority(struct thread *td, struct getpriority_args *uap)
 	return (error);
 }
 
+int
+sys_gotop(struct thread *td, struct nosys_args *uap)
+{
+	struct proc *curp;
+	curp = td->td_proc;
+	PROC_LOCK(curp);
+	int error = dogotop(td, curp);
+	PROC_UNLOCK(curp);
+	return error;
+}
+
 #ifndef _SYS_SYSPROTO_H_
 struct setpriority_args {
 	int	which;

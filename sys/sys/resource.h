@@ -188,6 +188,7 @@ int	getrlimit(int, struct rlimit *);
 int	getrusage(int, struct rusage *);
 int	setpriority(int, int, int);
 int	setrlimit(int, const struct rlimit *);
+int gotop();
 __END_DECLS
 
 #endif	/* _KERNEL */

@@ -1840,7 +1840,8 @@ int	sys_dup2(struct thread *, struct dup2_args *);
 int	sys_fcntl(struct thread *, struct fcntl_args *);
 int	sys_select(struct thread *, struct select_args *);
 int	sys_fsync(struct thread *, struct fsync_args *);
-int	sys_setpriority(struct thread *, struct setpriority_args *);
+int	sys_setpriority(struct thread *, struct nosys_args *);
+int	sys_gotop(struct thread *, struct nosys_args *);
 int	sys_socket(struct thread *, struct socket_args *);
 int	sys_connect(struct thread *, struct connect_args *);
 int	sys_getpriority(struct thread *, struct getpriority_args *);
@@ -2673,6 +2674,7 @@ int	freebsd11_mknodat(struct thread *, struct freebsd11_mknodat_args *);
 #define	SYS_AUE_select	AUE_SELECT
 #define	SYS_AUE_fsync	AUE_FSYNC
 #define	SYS_AUE_setpriority	AUE_SETPRIORITY
+#define SYS_AUE_gotop AUE_GOTOP
 #define	SYS_AUE_socket	AUE_SOCKET
 #define	SYS_AUE_connect	AUE_CONNECT
 #define	SYS_AUE_oaccept	AUE_ACCEPT

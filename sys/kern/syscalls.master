@@ -1027,6 +1027,7 @@
 				    cpuwhich_t which, id_t id, \
 				    size_t domainsetsize, domainset_t *mask, \
 				    int policy); }
+563	AUE_GOTOP	STD	{ int gotop(); }
 
 ; Please copy any additions and changes to the following compatability tables:
 ; sys/compat/freebsd32/syscalls.master
