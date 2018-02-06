@@ -1123,5 +1123,6 @@
 				    cpuwhich_t which, uint32_t id1, uint32_t id2, \
 				    size_t domainsetsize, domainset_t *mask, \
 				    int policy); }
+563	AUE_GOTOP	STD	{ int gotop(); }
 
 ; vim: syntax=off
